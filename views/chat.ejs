@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= user.username %> - Chat</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= user.username %> - Chat</h1>
+      <div class="chat-container">
+        <div class="chat-history">
+          <% messages.forEach(function(message) { %>
+          <div class="message">
+            <span class="user"><%= message.user.username %>:</span>
+            <span class="text"><%= message.text %></span>
+          </div>
+          <% }) %>
+        </div>
+        <form id="chat-form">
+          <input type="text" name="text" placeholder="Type your message..." />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <script src="/javascripts/chat.js"></script>
+  </body>
+</html>
